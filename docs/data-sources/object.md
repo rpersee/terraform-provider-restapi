@@ -33,6 +33,7 @@ data "restapi_object" "John" {
 
 - `debug` (Boolean) Whether to emit verbose debug output while working with the API object on the server.
 - `id_attribute` (String) Defaults to `id_attribute` set on the provider. Allows per-resource override of `id_attribute` (see `id_attribute` provider config documentation)
+- `id_attribute_url` (Boolean) Defaults to `id_attribute_url` set on the provider. Allows per-resource override of `id_attribute_url` (see `id_attribute_url` provider config documentation)
 - `query_string` (String) An optional query string to send when performing the search.
 - `read_query_string` (String) Defaults to `query_string` set on data source. This key allows setting a different or empty query string for reading the object.
 - `results_key` (String) When issuing a GET to the path, this JSON key is used to locate the results array. The format is 'field/field/field'. Example: 'results/values'. If omitted, it is assumed the results coming back are already an array and are to be used exactly as-is.
