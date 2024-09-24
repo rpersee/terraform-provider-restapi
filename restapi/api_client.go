@@ -342,6 +342,12 @@ func (client *APIClient) sendRequest(method string, path string, data string) (s
 			return "", fmt.Errorf("could not parse location header data: '%s'", location)
 		}
 
+		// If the location header is relative, we need to make it absolute
+		if locationURL.Host == "" {
+			locationURL.Scheme = req.URL.Scheme
+			locationURL.Host = req.URL.Host
+		}
+
 		req.URL = locationURL
 		req.Method = "GET"
 
